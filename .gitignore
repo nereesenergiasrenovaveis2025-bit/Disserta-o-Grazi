@@ -1,0 +1,17 @@
+principal.abx
+*.log
+temp/
+principal.aux
+principal.bbl
+principal.blg
+principal.idx
+principal.ind
+principal.lof
+principal.lot
+principal.out
+principal.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm

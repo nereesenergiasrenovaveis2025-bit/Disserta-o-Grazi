@@ -1,0 +1,78 @@
+Aqui ficarão sugestões e informações uteis
+
+1- A pasta Texto contém todos os textos do documento, cada Secção possui seu código correnspondente, isso deixa organizado e fácil de encontrar a Secção desejada
+
+2- No codigo é possivel ver alguns exemplos e explicações de uso, como por exemplo: colocar imagem, referenciar uma Secção ou Subsecção, como colocar texto em negrito ou itálico. Qualquer coisa diferente do habitual, gpt pode ser consultado.
+
+
+
+
+
+################# Aqui vai exemplos de listas: #########################
+
+\subsection{Listas numeradas}
+\begin{enumerate}
+    \item Primeiro item
+    \item Segundo item
+\end{enumerate}
+
+\subsection{Listas com marcadores}
+\begin{itemize}
+    \item Um item
+    \item Outro item
+\end{itemize}
+
+\subsection{Listas personalizadas}
+\begin{itemize}[label=\textbullet, leftmargin=1.5cm]
+    \item Item com marcador customizado
+\end{itemize}
+
+########################################################################
+
+
+##################### Para adicionar equações matematicas ##############
+
+\section{Equações}
+
+Uma equação simples no texto: $E = mc^2$
+
+Equação destacada:
+\begin{equation}
+\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}
+\end{equation}
+
+Sistemas:
+\begin{align}
+x + y &= 10 \\
+2x - y &= 3
+\end{align}
+
+
+########################################################################
+
+
+####################### Para adicionar Imagens #########################
+
+\section{Imagens}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{exemplo.png}
+\caption{Legenda da imagem.}
+\label{fig:exemplo}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

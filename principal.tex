@@ -1,0 +1,442 @@
+\documentclass[tcc1,numbers]{coppe-delufs}
+
+\usepackage{t1enc}
+\usepackage[opções]{subfigure}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{latexsym}
+\usepackage{helvet} % Para uso de fonte Arial/ helvética
+\renewcommand{\familydefault}{\sfdefault} % Para uso de fonte Arial/ helvética
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[figure]{font=small}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{bigstrut}
+\usepackage{url,color}
+%\usepackage[numbers,sort&compress]{natbib}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage[stable]{footmisc}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage{array}
+\usepackage{siunitx}
+%\usepackage[numbers,sort&compress]{natbib}
+\usepackage{longtable}
+\usepackage{eurosym}
+\usepackage{ragged2e}
+\usepackage{booktabs, makecell, ltablex, threeparttablex}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}{>{\RaggedRight}X}
+\newcolumntype{L}{>{\RaggedLeft}X}
+\usepackage{xtab}
+% \renewcommand{\TPTnoteSettings}{\small}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[authoryear]{natbib}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=blue,
+    citecolor=black,
+}
+
+%Tira todos as separações por - em final de linha
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\graphicspath{{./figuras/}}             % pastas onde estão as figuras
+ 
+
+\makelosymbols
+\makeloabbreviations
+
+
+\setcounter{secnumdepth}{2}
+\setlength{\parindent}{1.25cm}
+
+
+\clearpage
+\thispagestyle{empty}
+
+
+
+\makeatletter
+\renewcommand{\bibsection}{}
+\makeatother
+
+\setlength{\parskip}{0pt}
+
+\titleformat{\chapter}
+  {\normalfont\Huge\bfseries\raggedright}
+  {\thechapter}{0.8em}{}
+
+\titlespacing*{\chapter}
+{0pt}        % recuo à esquerda (0 = respeita margem)
+{0pt}        % espaço antes do título
+{1.5cm}      % espaço depois do título
+
+
+
+
+
+
+
+
+
+\titlespacing*{\section}
+{0pt}{\baselineskip}{0pt\baselineskip}
+
+\titlespacing*{\subsection}
+{0pt}{\baselineskip}{0pt\baselineskip}
+
+\titlespacing*{\subsubsection}
+{0pt}{\baselineskip}{0pt\baselineskip}  
+
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+  \vspace*{-1cm}%
+  {\parindent \z@
+   \raggedright
+   \normalfont
+   \bfseries
+   \thechapter\space #1\par\nobreak
+   \vskip \baselineskip
+  }}
+\renewcommand{\@makeschapterhead}[1]{%
+  \vspace*{-1cm}%
+  {\parindent \z@
+   \raggedright
+   \normalfont
+   \bfseries
+   #1\par\nobreak
+   \vskip \baselineskip
+  }}
+\makeatother
+
+
+\makeatletter
+\renewcommand\section{%
+  \@startsection{section}{1}{\z@}%
+  {\baselineskip}% espaço antes
+  {\baselineskip}% espaço depois
+  {\normalfont\bfseries\raggedright}%
+}
+\makeatother
+
+\makeatletter
+\renewcommand\subsection{%
+  \@startsection{subsection}{2}{\z@}%
+  {\baselineskip}%
+  {\baselineskip}%
+  {\normalfont\bfseries\raggedright}%
+}
+\makeatother
+
+
+
+
+
+\makeatletter
+\patchcmd{\listoffigures}{\chapter*{\listfigurename}}{\chapter*{\MakeUppercase{\listfigurename}}}{}{}
+\makeatother
+
+
+
+\makeatletter
+\patchcmd{\listoftables}{\chapter*{\listtablename}}{\chapter*{\MakeUppercase{\listtablename}}}{}{}
+\makeatother
+
+
+\makeatletter
+\patchcmd{\tableofcontents}{\chapter*{\contentsname}}{\chapter*{\MakeUppercase{\contentsname}}}{}{}
+\makeatother
+
+
+
+
+\makeatletter
+\renewcommand{\@makeschapterhead}[1]{%
+  \vspace*{0pt}%
+  {\parindent \z@
+   \centering
+   \normalfont
+   \bfseries
+   \MakeUppercase{#1}\par\nobreak
+   \vskip \baselineskip
+  }}
+
+  
+\makeatother
+
+
+
+% Configurando subsub negrito
+\makeatletter
+\renewcommand{\l@subsection}{%
+  \@dottedtocline{2}{1.25cm}{1.25cm}%
+}
+\let\old@subsection\l@subsection
+\renewcommand{\l@subsection}[2]{%
+  \old@subsection{\bfseries #1}{\bfseries #2}%
+}
+\makeatother
+
+
+
+
+
+
+
+
+\begin{document}
+
+%%--CABEÇALHO--%%
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.2]{Figuras/ufs.png}
+\end{figure}
+
+\begin{center}
+ 
+ \large UNIVERSIDADE FEDERAL DE SERGIPE\\ 
+PRÓ-REITORIA DE PÓS-GRADUAÇÃO E PESQUISA
+\vspace{10mm}
+
+\normalsize
+PROGRAMA DE PÓS-GRADUAÇÃO EM ENGENHARIA ELÉTRICA
+\vspace{10mm}
+
+% \textbf{\Large  Desenvolvimento de Câmara de Cultivo de Pequeno Porte para Agricultura Controlada\\ \normalsize  Subsistema de Sensoriamento e Atuação das Condições do
+% Solo para Câmara de Cultivo Isolado}
+% \vspace{19mm}
+
+\textbf{\normalsize  Análise de Desempenho e Eficiência Energética de Usinas Fotovoltaicas} 
+\vspace{5mm}
+\\
+\vspace{10mm}
+
+% {\normalsize Engenharias\\
+% Instrumentação Eletrônica\\
+% Agricultura de Precisão}
+ \vspace{20mm}
+
+{\large \textbf{Graziela Fernanda Oliveira Monteiro}}
+\vspace{20mm}
+
+% {\large Este projeto foi desenvolvido com bolsa de iniciação científica}
+\vspace{5mm}
+
+% \large{
+% PICVOL\\}
+% \vspace{10mm}
+
+{\normalsize Orientador: Douglas Bressan Riffel}\\
+ \newline
+ 
+\vspace{70mm}
+
+{\normalsize São Cristóvão, Sergipe, Brasil\\ Dezembro de 2025}
+\vspace{5mm}
+
+
+\end{center}
+
+ 
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+
+%%--CONTRACAPA--%%
+
+%%--CONTRACAPA--%%
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.2]{Figuras/ufs.png}
+\end{figure}
+
+\begin{center}
+ 
+ \large UNIVERSIDADE FEDERAL DE SERGIPE\\ 
+PRÓ-REITORIA DE PÓS-GRADUAÇÃO E PESQUISA
+\vspace{10mm}
+
+\normalsize
+PROGRAMA DE PÓS-GRADUAÇÃO EM ENGENHARIA ELÉTRICA
+\vspace{10mm}
+
+
+
+\large
+\textbf{Graziela Fernanda Oliveira Monteiro}
+\vspace{25mm}
+
+\normalsize
+\textbf{Análise de Desempenho e Eficiência Energética de Usinas Fotovoltaicas}
+\vspace{20mm}
+
+\begin{flushright}
+\begin{minipage}{0.55\textwidth}
+Trabalho de conclusão de curso apresentado ao Programa de Pós-Graduação em Engenharia Elétrica da Universidade Federal de Sergipe, como parte dos requisitos para obtenção do título de Mestre em Engenharia Elétrica.
+
+\vspace{5mm}
+
+Orientador: Prof. Dr. Douglas Bressan Riffel.
+\end{minipage}
+\end{flushright}
+
+\vfill
+
+\normalsize
+São Cristóvão, Sergipe, Brasil\\
+Dezembro de 2025
+
+\end{center}
+
+
+
+
+\cleardoublepage
+\thispagestyle{empty}
+
+\begin{center}
+
+\large
+\textbf{Graziela Fernanda Oliveira Monteiro}
+\vspace{20mm}
+
+\normalsize
+\textbf{Análise de Desempenho e Eficiência Energética de Usinas Fotovoltaicas}
+\vspace{15mm}
+
+\begin{flushright}
+\begin{minipage}{0.55\textwidth}
+Dissertação apresentada ao Programa de Pós-Graduação em Engenharia Elétrica da Universidade Federal de Sergipe, como requisito parcial para obtenção do título de Mestre em Engenharia Elétrica.
+\end{minipage}
+\end{flushright}
+
+\vspace{10mm}
+\end{center}
+
+
+Aprovado em DD de MMMM de AAAA.
+
+
+\vspace{10mm}
+
+\begin{center}
+BANCA EXAMINADORA
+\end{center}
+
+\vspace{5mm}
+
+\begin{center}
+
+\begin{tabular}{>{\centering\arraybackslash}p{10cm}}
+\rule{10cm}{0.4pt} \\
+Prof. Dr. Douglas Bressan Riffel \\
+Orientador – UFS \\[10mm]
+
+\rule{10cm}{0.4pt} \\
+Prof. Dr. Nome do Membro 1 \\
+Membro da Banca – Instituição \\[10mm]
+
+\rule{10cm}{0.4pt} \\
+Prof. Dr. Nome do Membro 2 \\
+Membro da Banca – Instituição
+\end{tabular}
+
+\end{center}
+
+
+\vfill
+
+\begin{center}
+São Cristóvão, Sergipe, Brasil\\
+Dezembro de 2025
+\end{center}
+
+
+
+
+
+
+\input{Texto/1 - Pretextuais}
+
+
+\thispagestyle{empty}
+
+
+
+
+ 
+\cleardoublepage
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\listoffigures
+\cleardoublepage
+\listoftables
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % ajuste conforme seu documento
+
+
+
+\newpage
+
+
+
+
+\setcounter{tocdepth}{2} % até subsubseção
+\cleardoublepage
+\tableofcontents
+
+\thispagestyle{empty}
+
+
+
+
+\mainmatter
+\nocite{Gulati2023,Theocharides2024,Riakhi2021,Benedetti2020, Yalawar2018,Kulik2024,SilvaFausto2022,Raimo2018, SilvaRaquel2022,Rediske2024,Odeh2018,Lindig2024, Oliveira2021,Kroth2020}
+
+
+\onehalfspacing
+
+% \input{Texto/1-resumo.tex}
+\input{Texto/2-introducao.tex}
+% \input{Texto/3-revbib.tex}
+% \input{Texto/4-fundamentacao.tex}
+\input{Texto/5-metodologia.tex}
+% \input{Texto/6-resultados.tex}
+\input{Texto/7-consideracoes.tex}
+% \input{Texto/8-atividades.tex}
+% \input{Texto/9-trabfuturos.tex}
+
+
+\backmatter
+
+
+\input{Texto/biblioteca}
+
+
+
+\input{Texto/apêndices}
+
+\end{document}
+
